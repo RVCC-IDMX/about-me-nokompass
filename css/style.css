@@ -2,12 +2,12 @@ body {
     font-family: 'Montserrat', sans-serif;
     background-color: #00D1C3;
     color: #0A1F46;
-    text-align: center;
 }
 
 h1, h2, h3, h4, h5, h6 {
     font-family: 'Montserrat', sans-serif;
     font-size: 30pt;
+    text-align: center;
 }
 
 header, footer {
@@ -30,4 +30,25 @@ header, footer {
 #hero img {
     max-width: 200px;
     width: 100%;
+}
+
+#projects {
+    text-align: center;
+}
+
+#hobbies {
+    background-color: #00B0A4;
+    font-size: 15pt;
+    font-weight: 500;
+    border-radius: 1em;
+    max-width: 500px;
+    width: 100%;
+    margin: auto;
+    margin-bottom: 1em;
+    padding: 1em;
+    text-align: center;
+}
+
+#hobbies-list {
+    list-style-type: none;
 }
