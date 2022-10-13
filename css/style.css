@@ -1,70 +1,94 @@
-body {  
-    font-family: 'Montserrat', sans-serif;
-    background-color: #00D1C3;
-    color: #0A1F46;
+body {
+  font-family: "Montserrat", sans-serif;
+  background-color: #00d1c3;
+  color: #0a1f46;
 }
 
-h1, h2, h3, h4, h5, h6 {
-    font-family: 'Montserrat', sans-serif;
-    font-size: 30pt;
-    text-align: center;
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: "Montserrat", sans-serif;
+  font-size: 30pt;
+  text-align: center;
 }
 
-header, footer {
-    background-color: #00B0A4;
-    text-align: center;
-    display: flex;
-    justify-content: center;
-    padding: 1em;
-    border-radius: 1em;
+header,
+footer {
+  background-color: #00b0a4;
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  padding: 1em;
+  border-radius: 1em;
 }
 
 #hero {
-    margin: 1em 0 1em 0;
-    padding: 1em;
-    text-align: center;
-    background-color: #00B0A4;
-    border-radius: 1em;
+  margin: 1em 0 1em 0;
+  padding: 1em;
+  text-align: center;
+  background-color: #00b0a4;
+  border-radius: 1em;
 }
 
 #hero img {
-    max-width: 200px;
-    width: 100%;
+  max-width: 200px;
+  width: 100%;
 }
 
 #projects {
-    text-align: center;
+  text-align: center;
 }
 
 #hobbies {
-    background-color: #00B0A4;
-    font-size: 15pt;
-    font-weight: 500;
-    border-radius: 1em;
-    max-width: 500px;
-    width: 100%;
-    margin: auto;
-    margin-bottom: 1em;
-    padding: 1em;
-    text-align: center;
+  background-color: #00b0a4;
+  font-size: 15pt;
+  font-weight: 500;
+  border-radius: 1em;
+  max-width: 500px;
+  width: 100%;
+  margin: auto;
+  margin-bottom: 1em;
+  padding: 1em;
+  text-align: center;
 }
 
 #hobbies-list {
-    list-style-type: none;
+  list-style-type: none;
 }
 
 #gallery {
-    background-color: #00B0A4;
-    border-radius: 1em;
-    padding: 1em;
-    margin: auto;
-    margin-bottom: 1em;
+  background-color: #00b0a4;
+  border-radius: 1em;
+  padding: 1em;
+  margin: auto;
+  margin-bottom: 1em;
 }
 
 #gallery img {
-    max-width: 100%;
+  max-width: 100%;
 }
 
 #gallery figure {
-    text-align: center;
+  text-align: center;
+}
+
+#lit {
+  background-color: #00b0a4;
+  border-radius: 1em;
+  padding: 1em;
+  margin: auto;
+  margin-bottom: 1em;
+}
+
+#lit div p {
+  clear: both;
+}
+
+#lit div p:first-letter {
+    color:#0a1f46;
+    float: left;
+    font-size: 3em;
 }
