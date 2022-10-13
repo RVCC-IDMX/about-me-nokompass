@@ -52,3 +52,19 @@ header, footer {
 #hobbies-list {
     list-style-type: none;
 }
+
+#gallery {
+    background-color: #00B0A4;
+    border-radius: 1em;
+    padding: 1em;
+    margin: auto;
+    margin-bottom: 1em;
+}
+
+#gallery img {
+    max-width: 100%;
+}
+
+#gallery figure {
+    text-align: center;
+}
