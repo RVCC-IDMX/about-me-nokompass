@@ -25,6 +25,8 @@ footer {
   border-radius: 1em;
 }
 
+/* hero */
+
 #hero {
   margin: 1em 0 1em 0;
   padding: 1em;
@@ -42,22 +44,32 @@ footer {
   text-align: center;
 }
 
+/* hobbies */
+
 #hobbies {
   background-color: #00b0a4;
   font-size: 15pt;
   font-weight: 500;
   border-radius: 1em;
-  max-width: 500px;
-  width: 100%;
+ 
   margin: auto;
   margin-bottom: 1em;
   padding: 1em;
   text-align: center;
 }
 
+@media screen and (min-width: 560px) {
+  #hobbies{
+    max-width: 500px;
+    width: 100%;
+  }
+}
+
 #hobbies-list {
   list-style-type: none;
 }
+
+/* gallery */
 
 #gallery {
   background-color: #00b0a4;
@@ -65,15 +77,46 @@ footer {
   padding: 1em;
   margin: auto;
   margin-bottom: 1em;
+  display: flex;
+  flex-direction: column;
+}
+
+#galleryimages {
+  display: flex;
+  flex-direction: column;
 }
 
 #gallery img {
-  max-width: 100%;
+  max-width: 75%;
 }
 
 #gallery figure {
   text-align: center;
 }
+
+figcaption{
+  margin-top: 1em;
+}
+
+@media screen and (min-width: 60em) {
+  figure {
+    display:grid;
+    grid-template-columns: 2fr 1fr;
+  }
+
+  figcaption {
+    display:  flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 1.7rem;
+  }
+
+  #gallery img {
+    max-width: 50%;
+  }
+}
+
+/* lipsum */
 
 #lit {
   background-color: #00b0a4;
