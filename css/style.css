@@ -118,6 +118,21 @@ figcaption{
     font-size: 3em;
 }
 
+#video {
+  background-color: #00b0a4;
+  border-radius: 1em;
+  padding: 1em;
+  margin: auto;
+  margin-bottom: 1em;
+
+  display: flex;
+  justify-content: center;
+  margin-bottom: 1em;
+  flex-direction: column;
+  align-items: center;
+}
+
+
 /* tablet size */
 @media screen and (min-width: 60em) {
   figure {
@@ -140,6 +155,7 @@ figcaption{
     max-width: 100%;
     columns: 20rem;
   }
+
 }
 
 /* large screen sizes */
