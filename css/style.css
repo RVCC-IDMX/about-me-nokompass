@@ -132,6 +132,19 @@ figcaption{
   align-items: center;
 }
 
+#contact {
+  background-color: #00b0a4;
+  border-radius: 1em;
+  padding: 1em;
+  margin: auto;
+  margin-bottom: 1em;
+}
+
+/* contact form */
+
+#formElements {
+  display: grid;
+}
 
 /* tablet size */
 @media screen and (min-width: 60em) {

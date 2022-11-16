@@ -140,6 +140,64 @@
         frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
         allowfullscreen></iframe>
     </section>
+
+    <section id="contact">
+      <h2>Contact Me</h2>
+
+      <form id="contactForm" name="contactForm" method="post" data-netlify="true">
+        <fieldset>
+          <legend>Contact Form</legend>
+
+          <div id="formElements">
+            <!-- Name -->
+            <label for="name">Name (required)</label>
+            <input type="text" id="name" name="name" required>
+
+            <!-- Email -->
+            <label for="email">Email (required)</label>
+            <input type="text" id="email" name="email" required>
+
+            <!-- Phone Number -->
+            <label for="phone">Phone number (optional)</label>
+            <input type="tel" id="phone" name="phone">
+
+            <!-- Phone Type -->
+            <label for="phonetype">Phone type (optional)</label>
+            <select id="phonetype" name="phonetype">
+              <option value="" selected>Select phone type</option>
+              <option value="home">Home</option>
+              <option value="work">Work</option>
+              <option value="other">Mobile</option>
+            </select>
+
+            <!-- Message -->
+            <label for="message">Comments (optional)</label>
+            <textarea id="message" name="message" rows="8"></textarea>
+
+            <!-- Reply -->
+            <fieldset>
+              <legend>Would you like a reply?</legend>
+              <ul>
+                <li>
+                  <input type="radio" id="message-yes" name="reply" value="Yes">
+                  <label for="message-yes">Yes</label>
+                </li>
+                <li>
+                  <input type="radio" id="message-no" name="reply" checked value="Yes">
+                  <label for="message-no">No</label>
+                </li>
+              </ul>
+            </fieldset>
+
+            <!-- Submit -->
+            <button type="submit">Submit</button>
+
+          </div>
+
+        </fieldset>
+      </form>
+    </section>
+
   </main>
   <footer>&copy; 2022 - Korben Widmer</footer>
 </body>
