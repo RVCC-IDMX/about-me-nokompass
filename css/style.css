@@ -51,7 +51,7 @@ footer {
   font-size: 15pt;
   font-weight: 500;
   border-radius: 1em;
- 
+
   margin: auto;
   margin-bottom: 1em;
   padding: 1em;
@@ -59,7 +59,7 @@ footer {
 }
 
 @media screen and (min-width: 560px) {
-  #hobbies{
+  #hobbies {
     max-width: 500px;
     width: 100%;
   }
@@ -94,7 +94,7 @@ footer {
   text-align: center;
 }
 
-figcaption{
+figcaption {
   margin-top: 1em;
 }
 
@@ -113,9 +113,9 @@ figcaption{
 }
 
 #lit div p:first-child:first-letter {
-    color:#0a1f46;
-    float: left;
-    font-size: 3em;
+  color: #0a1f46;
+  float: left;
+  font-size: 3em;
 }
 
 #video {
@@ -144,6 +144,51 @@ figcaption{
 
 #formElements {
   display: grid;
+  row-gap: 0.5em;
+}
+
+#contactForm {
+  max-width: 60vw;
+  margin: auto;
+}
+
+fieldset {
+  border: 2px solid;
+}
+
+legend {
+  background-color: #0a1f46;
+  color: white;
+  padding: 0.5em;
+}
+
+#contact input,
+#contact textarea,
+#contact select,
+#contact button {
+  padding: 0.5em;
+  font-size: 1rem;
+}
+
+#contact ul {
+  list-style: none;
+  padding: 0px;
+}
+
+#contact li {
+  margin: 1rem;
+}
+
+#contact button {
+  background-color: #0a1f46;
+  border: none;
+  color: white;
+  transition-duration: 0.2s;
+}
+
+#contact button:hover {
+  background-color: #06132b;
+  transition-duration: 0.2s;
 }
 
 /* tablet size */
@@ -154,7 +199,7 @@ figcaption{
   }
 
   figcaption {
-    display:  flex;
+    display: flex;
     justify-content: center;
     align-items: center;
     font-size: 1.7rem;
@@ -173,7 +218,7 @@ figcaption{
 
 /* large screen sizes */
 @media screen and (min-width: 100em) {
-  
+
   #gallery {
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
