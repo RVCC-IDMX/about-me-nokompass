@@ -1,239 +1,178 @@
+/* utility classes */
+.flex {
+  display: flex;
+  gap: var(--gap, 1rem);
+}
+
+.grid {
+  display: grid;
+  gap: var(--gap, 1rem);
+}
+
+.d-block {
+  display: block;
+}
+
 body {
   font-family: "Montserrat", sans-serif;
-  background-color: #00d1c3;
-  color: #0a1f46;
+  margin: 0;
+  /*background-color: #00d1c3;
+  color: #0a1f46;*/
+
+  color:white;
+
+  overflow-x: hidden;
 }
 
-h1,
-h2,
-h3,
-h4,
-h5,
-h6 {
-  font-family: "Montserrat", sans-serif;
-  font-size: 30pt;
-  text-align: center;
+#header {
+  background-image: url("../img/pathwithgatedark.jpg");
+  background-position: center;
+  background-repeat: no-repeat;
+  height: 95vh;
+
+  flex-direction: column;
 }
 
-header,
-footer {
-  background-color: #00b0a4;
-  text-align: center;
-  display: flex;
-  justify-content: center;
-  padding: 1em;
-  border-radius: 1em;
+/* primary header */
+
+/* navbar was made using a tutorial I found by Kevin Powell */
+/* https://www.youtube.com/watch?v=HbBMp6yUXO0 */
+
+#logosmall {
+  display: none;
+  width: 5rem;
+  margin: 2rem;
 }
+
+#logobig {
+  display: block;
+  width: 30rem;
+  margin: 2rem;
+}
+
+.primary-header {
+  align-items: center;
+  justify-content: space-between;
+}
+
+.mobile-nav-toggle {
+  display: none;
+}
+
+.primary-navigation li a:hover {
+  color: rgb(221, 117, 32);
+  cursor: pointer;
+
+  transition: color 150ms ease-out;
+}
+.primary-navigation {
+  color: white;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+
+  background: hsl(0 0% 0% / 0.75);
+
+
+  font-size: 1.5rem;
+}
+
+@supports (backdrop-filter: blur(.6rem)) {
+  .primary-navigation {
+    background: hsl(0 0% 100% / 0.1);
+    backdrop-filter: blur(.6rem);
+  }
+}
+
+@media (max-width: 45em) {
+  .primary-navigation {
+    --gap: 2em;
+
+    font-size: 2rem;
+
+    position: fixed;
+    z-index: 1000;
+    inset: 0 0 0 30%;
+
+    flex-direction: column;
+    padding: min(30vh, 10rem) 2rem;
+
+    transform: translateX(100%);
+    transition: transform 350ms ease-out;
+  }
+
+  .primary-navigation[data-visible="true"] {
+    transform: translateX(0%);
+  }
+
+  .mobile-nav-toggle[data-visible="true"] {
+    background-image: url("/assets/icon-hamburger-close.svg");
+    background-color: transparent;
+  }
+
+  .mobile-nav-toggle {
+    display: block;
+    position: absolute;
+    z-index: 9999;
+    background-color: transparent;
+    background-image: url("/assets/icon-hamburger.svg");
+    background-repeat: no-repeat;
+    width: 2rem;
+    border: 0;
+    aspect-ratio: 1;
+    top: 2rem;
+    right: 2rem;
+  }
+
+}
+
+@media (max-width: 72em) {
+  #logosmall {
+    display: block;
+  }
+
+  #logobig {
+    display: none;
+  }
+}
+
+@media (min-width: 45em) {
+  .primary-navigation {
+    --gap: 5em;
+    padding-block: 2em;
+    padding-inline: clamp(2rem, 10vw, 7rem);
+  }
+}
+
+/* tablet size */
+@media screen and (min-width: 60em) {}
+
+/* large screen sizes */
+@media screen and (min-width: 100em) {}
 
 /* hero */
 
 #hero {
-  margin: 1em 0 1em 0;
-  padding: 1em;
-  text-align: center;
-  background-color: #00b0a4;
-  border-radius: 1em;
+  max-height: inherit;
+  height: inherit;
+
+  /* border: 1px solid red; */
+
+  justify-content: center;
+  align-items: center;
+
+  --gap: 5em;
 }
 
-#hero img {
-  max-width: 200px;
-  width: 100%;
-}
-
-#projects {
-  text-align: center;
-}
-
-/* hobbies */
-
-#hobbies {
-  background-color: #00b0a4;
-  font-size: 15pt;
-  font-weight: 500;
-  border-radius: 1em;
-
-  margin: auto;
-  margin-bottom: 1em;
-  padding: 1em;
-  text-align: center;
-}
-
-@media screen and (min-width: 560px) {
-  #hobbies {
-    max-width: 500px;
-    width: 100%;
-  }
-}
-
-#hobbies-list {
-  list-style-type: none;
-}
-
-/* gallery */
-
-#gallery {
-  background-color: #00b0a4;
-  border-radius: 1em;
-  padding: 1em;
-  margin: auto;
-  margin-bottom: 1em;
-  display: flex;
-  flex-direction: column;
-}
-
-#galleryimages {
-  display: flex;
-  flex-direction: column;
-}
-
-#gallery img {
-  max-width: 75%;
-}
-
-#gallery figure {
-  text-align: center;
-}
-
-figcaption {
-  margin-top: 1em;
-}
-
-/* lipsum */
-
-#lit {
-  background-color: #00b0a4;
-  border-radius: 1em;
-  padding: 1em;
-  margin: auto;
-  margin-bottom: 1em;
-}
-
-#lit div p {
-  clear: both;
-}
-
-#lit div p:first-child:first-letter {
-  color: #0a1f46;
-  float: left;
+#hero h1 {
   font-size: 3em;
 }
 
-#video {
-  background-color: #00b0a4;
-  border-radius: 1em;
-  padding: 1em;
-  margin: auto;
-  margin-bottom: 1em;
-
-  display: flex;
-  justify-content: center;
-  margin-bottom: 1em;
-  flex-direction: column;
-  align-items: center;
+#hero h2 {
+  font-size: 2em;
 }
 
-#contact {
-  background-color: #00b0a4;
-  border-radius: 1em;
-  padding: 1em;
-  margin: auto;
-  margin-bottom: 1em;
-}
-
-/* contact form */
-
-#formElements {
-  display: grid;
-  row-gap: 0.5em;
-}
-
-#contactForm {
-  max-width: 60vw;
-  margin: auto;
-}
-
-fieldset {
-  border: 2px solid;
-}
-
-legend {
-  background-color: #0a1f46;
-  color: white;
-  padding: 0.5em;
-}
-
-#contact input,
-#contact textarea,
-#contact select,
-#contact button {
-  padding: 0.5em;
-  font-size: 1rem;
-}
-
-#contact ul {
-  list-style: none;
-  padding: 0px;
-}
-
-#contact li {
-  margin: 1rem;
-}
-
-#contact button {
-  background-color: #0a1f46;
-  border: none;
-  color: white;
-  transition-duration: 0.2s;
-}
-
-#contact button:hover {
-  background-color: #06132b;
-  transition-duration: 0.2s;
-}
-
-/* tablet size */
-@media screen and (min-width: 60em) {
-  figure {
-    display: grid;
-    grid-template-columns: 2fr 1fr;
-  }
-
-  figcaption {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    font-size: 1.7rem;
-  }
-
-  #gallery img {
-    max-width: 100%;
-  }
-
-  #lit div {
-    max-width: 100%;
-    columns: 20rem;
-  }
-
-}
-
-/* large screen sizes */
-@media screen and (min-width: 100em) {
-
-  #gallery {
-    display: grid;
-    grid-template-columns: 1fr 1fr 1fr;
-  }
-
-  hr {
-    display: none;
-  }
-
-  #gallery h2 {
-    grid-column: 1/-1;
-  }
-
-  figure {
-    display: block;
-  }
-
-}
+#hero img {
+  border-radius: 15em;
+  width: 20em;
+}  
