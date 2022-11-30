@@ -20,17 +20,17 @@ body {
   color: #0a1f46;*/
 
   color:white;
-
-  overflow-x: hidden;
 }
 
 #header {
   background-image: url("../img/pathwithgatedark.jpg");
   background-position: center;
   background-repeat: no-repeat;
+  background-size: cover;
   height: 95vh;
 
   flex-direction: column;
+  overflow-x: hidden;
 }
 
 /* primary header */
@@ -41,7 +41,7 @@ body {
 #logosmall {
   display: none;
   width: 5rem;
-  margin: 2rem;
+  margin: 0rem 2rem 0em;
 }
 
 #logobig {
@@ -75,6 +75,10 @@ body {
 
 
   font-size: 1.5rem;
+}
+
+nav {
+  box-shadow: 0 4px 20px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 }
 
 @supports (backdrop-filter: blur(.6rem)) {
@@ -124,9 +128,12 @@ body {
     right: 2rem;
   }
 
+  #logosmall {
+    margin: 1em 2em 1em;
+  }
 }
 
-@media (max-width: 72em) {
+@media (max-width: 1250px) {
   #logosmall {
     display: block;
   }
@@ -143,12 +150,6 @@ body {
     padding-inline: clamp(2rem, 10vw, 7rem);
   }
 }
-
-/* tablet size */
-@media screen and (min-width: 60em) {}
-
-/* large screen sizes */
-@media screen and (min-width: 100em) {}
 
 /* hero */
 
@@ -177,6 +178,27 @@ body {
   width: 20em;
 }  
 
+@media (max-width: 1300px) {
+  #hero img {
+    margin-left: 2em;
+  }
+}
+
+@media (max-width: 850px) {
+  #hero {
+    flex-direction: column;
+    --gap: 1em;
+  }
+
+  #hero img {
+    margin-left: 1em;
+  }
+
+  #hero h2, #hero h1 {
+    text-align: center;
+  }
+}
+
 
 /* gallery */
 #gallery {
@@ -189,6 +211,7 @@ body {
 }
 
 #gallery h2{
+  font-size: 2.5rem;
   margin: 0;
   display: flex;
   justify-content: center;
@@ -201,9 +224,11 @@ body {
   align-content: center;
 }
 
-#galleryimages, #gallery h2 {
+#gallerybackground {
+  padding: 2em 0em 2em;
   background-color: hsl(0 0% 100% / 0.1);
   backdrop-filter: blur(.6rem);
+  box-shadow: 0 4px 20px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 }
 
 .image{
@@ -220,15 +245,32 @@ body {
 }
 
 .desc {
-  margin-top: .5em;
+  margin-top: 1em;
 }
 
-@media (max-width: 45em) {
+@media (max-width: 83em) {
+  #gallerybackground {
+    padding: 2em 1em 2em;
+  }
+}
+
+@media (max-width: 50em) {
   #galleryimages {
     flex-direction: column;
     align-items: center;
   }
   .image {
     margin: 1em;
+  }
+}
+
+@media (max-width: 30em) {
+  #galleryimages {
+    flex-direction: column;
+    align-items: center;
+  }
+  .image {
+    margin: 1em;
+    width: 220px;
   }
 }
