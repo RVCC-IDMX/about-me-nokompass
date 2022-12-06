@@ -71,6 +71,63 @@
     </div>
   </section>
 
+  <section id="contact">
+    <div id="contactbackdrop">
+      <form id="contactForm" name="contactForm" method="post" data-netlify="true">
+        <h2>Contact Me</h2>
+        <fieldset>
+
+          <div id="formElements">
+            <!-- Name -->
+            <label for="name">Name (required)</label>
+            <input type="text" id="name" class="formInput" name="name" required>
+
+            <!-- Email -->
+            <label for="email">Email (required)</label>
+            <input type="text" id="email" class="formInput" name="email" required>
+
+            <!-- Phone Number -->
+            <label for="phone">Phone number (optional)</label>
+            <input type="tel" id="phone" class="formInput" name="phone">
+
+            <!-- Phone Type -->
+            <label for="phonetype">Phone type (optional)</label>
+            <select id="phonetype" class="formInput" name="phonetype">
+              <option value="" selected>Select phone type</option>
+              <option value="home">Home</option>
+              <option value="work">Work</option>
+              <option value="other">Mobile</option>
+            </select>
+
+            <!-- Message -->
+            <label for="message">Comments (optional)</label>
+            <textarea id="message" name="message" class="formInput" rows="8"></textarea>
+
+            <!-- Reply -->
+            <fieldset>
+              <legend>Would you like a reply?</legend>
+              <ul>
+                <li>
+                  <input type="radio" id="message-yes" name="reply" value="Yes">
+                  <label for="message-yes">Yes</label>
+                </li>
+                <li>
+                  <input type="radio" id="message-no" name="reply" checked value="Yes">
+                  <label for="message-no">No</label>
+                </li>
+              </ul>
+            </fieldset>
+
+            <!-- Submit -->
+            <button type="submit">Submit</button>
+
+          </div>
+
+        </fieldset>
+      </form>
+    </div>
+  </section>
+
   <main>
     <!--
     <section id="contact">
