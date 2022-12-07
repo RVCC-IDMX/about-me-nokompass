@@ -207,7 +207,7 @@
  /* Bio */
 
  #bio {
-   background-image: url('/img/screenwithcode.jpg');
+   background-image: url('/img/biographybackground.jpg');
    background-size: cover;
    background-repeat: no-repeat;
    background-position: center;
@@ -319,7 +319,7 @@
  /* Blog */
 
  #blog {
-   background-image: url('/img/screenwithcode.jpg');
+   background-image: url('/img/blogbackground.jpg');
 
    background-size: cover;
    background-repeat: no-repeat;
@@ -350,7 +350,7 @@
  /* Video */
 
  #video {
-   background-image: url('/img/screenwithcode.jpg');
+   background-image: url('/img/videobackground.jpg');
    align-items: center;
    flex-direction: column;
    background-size: cover;
