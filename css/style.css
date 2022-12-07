@@ -287,13 +287,6 @@
    margin-top: 1em;
  }
 
-/*  .deschover {
-   position: absolute;
-   top: 50%;
-   left: 50%;
-   transform: translate(-50%, -50%);
- } */
-
  @media (max-width: 83em) {
    #gallerybackground {
      padding: 2em 1em 2em;
