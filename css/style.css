@@ -213,6 +213,7 @@
    background-position: center;
    overflow: hidden;
    padding: 2em;
+
  }
 
  #biobackdrop {
@@ -220,6 +221,11 @@
    background-color: hsl(0 0% 100% / 0.1);
    backdrop-filter: blur(.6rem);
    box-shadow: 0 4px 20px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+ }
+
+ #listcontainer {
+  display: flex;
+  justify-content: center;
  }
 
  #bio h2 {
