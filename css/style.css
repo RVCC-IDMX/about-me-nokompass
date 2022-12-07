@@ -1,363 +1,490 @@
-/* utility classes */
-.flex {
-  display: flex;
-  gap: var(--gap, 1rem);
-}
+ /* TODO: Readme */
+ /* TODO: Biography section */
 
-.grid {
-  display: grid;
-  gap: var(--gap, 1rem);
-}
+ /* utility classes */
+ .flex {
+   display: flex;
+   gap: var(--gap, 1rem);
+ }
 
-.d-block {
-  display: block;
-}
+ .grid {
+   display: grid;
+   gap: var(--gap, 1rem);
+ }
 
-body {
-  font-family: "Montserrat", sans-serif;
-  margin: 0;
-  /*background-color: #00d1c3;
+ .d-block {
+   display: block;
+ }
+
+ body {
+   font-family: "Montserrat", sans-serif;
+   margin: 0;
+   /*background-color: #00d1c3;
   color: #0a1f46;*/
 
-  color: white;
-}
-
-#header {
-  background-image: url("../img/pathwithgatedark.jpg");
-  background-position: center;
-  background-repeat: no-repeat;
-  background-size: cover;
-  height: 95vh;
-
-  flex-direction: column;
-  overflow-x: hidden;
-}
-
-/* primary header */
-
-/* navbar was made using a tutorial I found by Kevin Powell */
-/* https://www.youtube.com/watch?v=HbBMp6yUXO0 */
-
-#logosmall {
-  display: none;
-  width: 5rem;
-  margin: 0rem 2rem 0em;
-}
-
-#logobig {
-  display: block;
-  width: 30rem;
-  margin: 2rem;
-}
-
-.primary-header {
-  align-items: center;
-  justify-content: space-between;
-}
-
-.mobile-nav-toggle {
-  display: none;
-}
-
-.primary-navigation li a:hover {
-  color: rgb(221, 117, 32);
-  cursor: pointer;
-
-  transition: color 150ms ease-out;
-}
-
-.primary-navigation {
-  color: white;
-  list-style: none;
-  padding: 0;
-  margin: 0;
-
-  background: hsl(0 0% 0% / 0.75);
-
-
-  font-size: 1.5rem;
-}
-
-nav {
-  box-shadow: 0 4px 20px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
-}
-
-@supports (backdrop-filter: blur(.6rem)) {
-  .primary-navigation {
-    background: hsl(0 0% 100% / 0.1);
-    backdrop-filter: blur(.6rem);
-  }
-}
-
-@media (max-width: 45em) {
-  .primary-navigation {
-    --gap: 2em;
-
-    font-size: 2rem;
-
-    position: fixed;
-    z-index: 1000;
-    inset: 0 0 0 30%;
-
-    flex-direction: column;
-    padding: min(30vh, 10rem) 2rem;
-
-    transform: translateX(100%);
-    transition: transform 350ms ease-out;
-  }
-
-  .primary-navigation[data-visible="true"] {
-    transform: translateX(0%);
-  }
-
-  .mobile-nav-toggle[data-visible="true"] {
-    background-image: url("/assets/icon-hamburger-close.svg");
-    background-color: transparent;
-  }
-
-  .mobile-nav-toggle {
-    display: block;
-    position: absolute;
-    z-index: 9999;
-    background-color: transparent;
-    background-image: url("/assets/icon-hamburger.svg");
-    background-repeat: no-repeat;
-    width: 2rem;
-    border: 0;
-    aspect-ratio: 1;
-    top: 2rem;
-    right: 2rem;
-  }
-
-  #logosmall {
-    margin: 1em 2em 1em;
-  }
-}
-
-@media (max-width: 1250px) {
-  #logosmall {
-    display: block;
-  }
-
-  #logobig {
-    display: none;
-  }
-}
-
-@media (min-width: 45em) {
-  .primary-navigation {
-    --gap: 5em;
-    padding-block: 2em;
-    padding-inline: clamp(2rem, 10vw, 7rem);
-  }
-}
-
-/* hero */
-
-#hero {
-  max-height: inherit;
-  height: inherit;
-
-  /* border: 1px solid red; */
-
-  justify-content: center;
-  align-items: center;
-
-  --gap: 5em;
-}
-
-#hero h1 {
-  font-size: 3em;
-}
-
-#hero h2 {
-  font-size: 2em;
-}
-
-#hero img {
-  border-radius: 15em;
-  width: 20em;
-}
-
-@media (max-width: 1300px) {
-  #hero img {
-    margin-left: 2em;
-  }
-}
-
-@media (max-width: 850px) {
-  #hero {
-    flex-direction: column;
-    --gap: 1em;
-  }
-
-  #hero img {
-    margin-left: 1em;
-  }
-
-  #hero h2,
-  #hero h1 {
-    text-align: center;
-  }
-}
-
-
-/* gallery */
-#gallery {
-  background-image: url("/img/gallerybackground.png");
-  background-size: cover;
-  background-repeat: no-repeat;
-  background-position: center;
-  overflow: hidden;
-  padding: 2em;
-}
-
-#gallery h2 {
-  font-size: 2.5rem;
-  margin: 0;
-  text-align: center;
-}
-
-#galleryimages {
-  margin-top: 2em;
-  display: flex;
-  justify-content: space-around;
-  align-content: center;
-}
-
-#gallerybackground {
-  padding: 2em 0em 2em;
-  background-color: hsl(0 0% 100% / 0.1);
-  backdrop-filter: blur(.6rem);
-  box-shadow: 0 4px 20px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
-}
-
-.image {
-  margin: 5px;
-  width: 390px;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-}
-
-.image img {
-  width: 100%;
-  height: auto;
-}
-
-.desc {
-  margin-top: 1em;
-}
-
-@media (max-width: 83em) {
-  #gallerybackground {
-    padding: 2em 1em 2em;
-  }
-}
-
-@media (max-width: 50em) {
-  #galleryimages {
-    flex-direction: column;
-    align-items: center;
-  }
-
-  .image {
-    margin: 1em;
-  }
-}
-
-@media (max-width: 30em) {
-  #galleryimages {
-    flex-direction: column;
-    align-items: center;
-  }
-
-  .image {
-    margin: 1em;
-    width: 220px;
-  }
-}
-
-/* Contact */
-
-#contact {
-  margin: 0;
-  background-image: url("/img/contactbackground.jpg");
-
-  background-size: cover;
-  background-repeat: no-repeat;
-  background-position: center;
-  overflow: hidden;
-  padding: 2em;
-}
-
-#contactbackdrop {
-  padding: 2em 0em 2em;
-  background-color: hsl(0 0% 100% / 0.1);
-  backdrop-filter: blur(.6rem);
-  box-shadow: 0 4px 20px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
-}
-
-#contact h2 {
-  margin: 0;
-  text-align: center;
-}
-
-#formElements {
-  display: grid;
-  row-gap: 0.5em;
-}
-
-#contactForm {
-  max-width: 60vw;
-  margin: auto;
-}
-
-fieldset {
-  border: 0px;
-}
-
-.formInput{
-  border: 1px solid white;
-  background: hsl(0 0% 0% / 0.21);
-}
-
-legend {
-  background-color: transparent;
-  border: 1px solid white;
-  color: white;
-  padding: 0.5em;
-}
-
-#contact input,
-#contact textarea,
-#contact select,
-#contact button {
-  padding: 0.5em;
-  font-size: 1rem;
-  color: white;
-}
-
-#contact ul {
-  list-style: none;
-  padding: 0px;
-}
-
-#contact li {
-  margin: 1rem;
-}
-
-#contact button {
-  background-color: transparent;
-  border: 1px solid white;
-  color: white;
-  transition-duration: 0.2s;
-  background: hsl(0 0% 0% / 0.21);
-}
-
-#contact button:hover {
-  background-color: white;
-  color: black;
-  transition-duration: 0.2s;
-  cursor: pointer;
-}
+   color: white;
+ }
+
+ #header {
+   background-image: url("../img/pathwithgatedark.jpg");
+   background-position: center;
+   background-repeat: no-repeat;
+   background-size: cover;
+   height: 95vh;
+
+   flex-direction: column;
+   overflow-x: hidden;
+ }
+
+ /* primary header */
+
+ /* navbar was made using a tutorial I found by Kevin Powell */
+ /* https://www.youtube.com/watch?v=HbBMp6yUXO0 */
+
+ #logosmall {
+   display: none;
+   width: 5rem;
+   margin: 0rem 2rem 0em;
+ }
+
+ #logobig {
+   display: block;
+   width: 30rem;
+   margin: 2rem;
+ }
+
+ .primary-header {
+   align-items: center;
+   justify-content: space-between;
+ }
+
+ .mobile-nav-toggle {
+   display: none;
+ }
+
+ .primary-navigation li a:hover {
+   color: rgb(221, 117, 32);
+   cursor: pointer;
+
+   transition: color 150ms ease-out;
+ }
+
+ .primary-navigation {
+   color: white;
+   list-style: none;
+   padding: 0;
+   margin: 0;
+
+   background: hsl(0 0% 0% / 0.75);
+
+
+   font-size: 1.5rem;
+ }
+
+ nav {
+   box-shadow: 0 4px 20px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+ }
+
+ @supports (backdrop-filter: blur(.6rem)) {
+   .primary-navigation {
+     background: hsl(0 0% 100% / 0.1);
+     backdrop-filter: blur(.6rem);
+   }
+ }
+
+ @media (max-width: 45em) {
+   .primary-navigation {
+     --gap: 2em;
+
+     font-size: 2rem;
+
+     position: fixed;
+     z-index: 1000;
+     inset: 0 0 0 30%;
+
+     flex-direction: column;
+     padding: min(30vh, 10rem) 2rem;
+
+     transform: translateX(100%);
+     transition: transform 350ms ease-out;
+   }
+
+   .primary-navigation[data-visible="true"] {
+     transform: translateX(0%);
+   }
+
+   .mobile-nav-toggle[data-visible="true"] {
+     background-image: url("/assets/icon-hamburger-close.svg");
+     background-color: transparent;
+   }
+
+   .mobile-nav-toggle {
+     display: block;
+     position: absolute;
+     z-index: 9999;
+     background-color: transparent;
+     background-image: url("/assets/icon-hamburger.svg");
+     background-repeat: no-repeat;
+     width: 2rem;
+     border: 0;
+     aspect-ratio: 1;
+     top: 2rem;
+     right: 2rem;
+   }
+
+   #logosmall {
+     margin: 1em 2em 1em;
+   }
+ }
+
+ @media (max-width: 1250px) {
+   #logosmall {
+     display: block;
+   }
+
+   #logobig {
+     display: none;
+   }
+ }
+
+ @media (min-width: 45em) {
+   .primary-navigation {
+     --gap: 5em;
+     padding-block: 2em;
+     padding-inline: clamp(2rem, 10vw, 7rem);
+   }
+ }
+
+ /* hero */
+
+ #hero {
+   max-height: inherit;
+   height: inherit;
+
+   /* border: 1px solid red; */
+
+   justify-content: center;
+   align-items: center;
+
+   --gap: 5em;
+ }
+
+ #hero h1 {
+   font-size: 3em;
+ }
+
+ #hero h2 {
+   font-size: 2em;
+ }
+
+ #hero img {
+   border-radius: 15em;
+   width: 20em;
+ }
+
+ @media (max-width: 1300px) {
+   #hero img {
+     margin-left: 2em;
+   }
+ }
+
+ @media (max-width: 850px) {
+   #hero {
+     flex-direction: column;
+     --gap: 1em;
+   }
+
+   #hero img {
+     margin-left: 1em;
+   }
+
+   #hero h2,
+   #hero h1 {
+     text-align: center;
+   }
+ }
+
+ /* Bio */
+
+ #bio {
+   background-image: url('/img/screenwithcode.jpg');
+   background-size: cover;
+   background-repeat: no-repeat;
+   background-position: center;
+   overflow: hidden;
+   padding: 2em;
+ }
+
+ #biobackdrop {
+   padding: 2em 0em 2em;
+   background-color: hsl(0 0% 100% / 0.1);
+   backdrop-filter: blur(.6rem);
+   box-shadow: 0 4px 20px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+ }
+
+ #bio h2 {
+   font-size: 2.5rem;
+   margin: 0;
+   text-align: center;
+ }
+
+ #bio p {
+   text-align: center;
+   margin-top: 2em;
+ }
+
+ /* gallery */
+ #gallery {
+   background-image: url("/img/gallerybackground.png");
+   background-size: cover;
+   background-repeat: no-repeat;
+   background-position: center;
+   overflow: hidden;
+   padding: 2em;
+ }
+
+ #gallery h2 {
+   font-size: 2.5rem;
+   margin: 0;
+   text-align: center;
+ }
+
+ #galleryimages {
+   margin-top: 2em;
+   display: flex;
+   justify-content: space-around;
+   align-content: center;
+ }
+
+ #gallerybackground {
+   padding: 2em 0em 2em;
+   background-color: hsl(0 0% 100% / 0.1);
+   backdrop-filter: blur(.6rem);
+   box-shadow: 0 4px 20px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+ }
+
+ .image {
+   margin: 5px;
+   width: 390px;
+   display: flex;
+   flex-direction: column;
+   align-items: center;
+   transition: width 250ms ease-out;
+ }
+
+ .image:hover {
+   width: 440px;
+   transition: width 150ms ease;
+   color: white;
+ }
+
+ .image img {
+   width: 100%;
+   height: auto;
+ }
+
+ .desc {
+   margin-top: 1em;
+ }
+
+/*  .deschover {
+   position: absolute;
+   top: 50%;
+   left: 50%;
+   transform: translate(-50%, -50%);
+ } */
+
+ @media (max-width: 83em) {
+   #gallerybackground {
+     padding: 2em 1em 2em;
+   }
+ }
+
+ @media (max-width: 50em) {
+   #galleryimages {
+     flex-direction: column;
+     align-items: center;
+   }
+
+   .image {
+     margin: 1em;
+   }
+ }
+
+ @media (max-width: 30em) {
+   #galleryimages {
+     flex-direction: column;
+     align-items: center;
+   }
+
+   .image {
+     margin: 1em;
+     width: 220px;
+   }
+ }
+
+ /* Blog */
+
+ #blog {
+   background-image: url('/img/screenwithcode.jpg');
+
+   background-size: cover;
+   background-repeat: no-repeat;
+   background-position: center;
+   overflow: hidden;
+   padding: 2em;
+ }
+
+ #blogbackground {
+   padding: 2em 4em 2em;
+   background-color: hsl(0 0% 100% / 0.1);
+   backdrop-filter: blur(.6rem);
+   box-shadow: 0 4px 20px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+ }
+
+ #blog p {
+   margin: 0;
+   text-align: center;
+   margin-top: 2em;
+ }
+
+ #blog h2 {
+   margin: 0;
+   text-align: center;
+   font-size: 2.5rem;
+ }
+
+ /* Video */
+
+ #video {
+   background-image: url('/img/screenwithcode.jpg');
+   align-items: center;
+   flex-direction: column;
+   background-size: cover;
+   background-repeat: no-repeat;
+   background-position: center;
+   padding: 2em;
+ }
+
+ #videobackground {
+   padding: 2em 0em 2em;
+   background-color: hsl(0 0% 100% / 0.1);
+   backdrop-filter: blur(.6rem);
+   box-shadow: 0 4px 20px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+ }
+
+ #video h2 {
+   text-align: center;
+   font-size: 2.5rem;
+   margin: 0;
+ }
+
+ #myVideo {
+   display: block;
+   margin: 0 auto;
+   margin-top: 2em;
+ }
+
+ /* Contact */
+
+ #contact {
+   margin: 0;
+   background-image: url("/img/contactbackground.jpg");
+
+   background-size: cover;
+   background-repeat: no-repeat;
+   background-position: center;
+   overflow: hidden;
+   padding: 2em;
+ }
+
+ #contactbackdrop {
+   padding: 2em 0em 2em;
+   background-color: hsl(0 0% 100% / 0.1);
+   backdrop-filter: blur(.6rem);
+   box-shadow: 0 4px 20px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+ }
+
+ #contact h2 {
+   margin: 0;
+   text-align: center;
+   font-size: 2.5rem;
+ }
+
+ #formElements {
+   display: grid;
+   row-gap: 0.5em;
+ }
+
+ #contactForm {
+   max-width: 60vw;
+   margin: auto;
+ }
+
+ fieldset {
+   border: 0px;
+ }
+
+ .formInput {
+   border: 1px solid white;
+   background: hsl(0 0% 0% / 0.21);
+ }
+
+ legend {
+   background-color: transparent;
+   border: 1px solid white;
+   color: white;
+   padding: 0.5em;
+ }
+
+ #contact textarea {
+   max-width: 60vw;
+   min-width: 60vw;
+   min-height: 5em;
+   max-height: 5em;
+ }
+
+ #contact input,
+ #contact textarea,
+ #contact select,
+ #contact button {
+   padding: 0.5em;
+   font-size: 1rem;
+   color: white;
+ }
+
+ #contact ul {
+   list-style: none;
+   padding: 0px;
+ }
+
+ #contact li {
+   margin: 1rem;
+ }
+
+ #contact button {
+   background-color: transparent;
+   border: 1px solid white;
+   color: white;
+   transition-duration: 0.2s;
+   background: hsl(0 0% 0% / 0.21);
+ }
+
+ #contact button:hover {
+   background-color: white;
+   color: black;
+   transition-duration: 0.2s;
+   cursor: pointer;
+ }
+
+ #contact legend {
+   background: hsl(0 0% 0% / 0.21);
+ }
+
+ /* Footer */
+
+ footer {
+   padding: 2em;
+   background-color: #1b1b1b;
+   text-align: center;
+ }
