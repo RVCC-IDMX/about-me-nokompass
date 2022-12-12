@@ -100,54 +100,42 @@
     <div id="blogbackground">
       <h2>Blog</h2>
       <p>
-        Johnson said, that Dr. Grainger was an agreeable man; a man who
-        would do any good that was in his power. His translation of
-        Tibullus, he thought, was very well done; but The Sugar-Cane, a
-        poem, did not please him; for, he exclaimed, 'What could he make of
-        a sugar-cane? One might as well write the "Parsley-bed, a Poem;" or
-        "The Cabbage-garden, a Poem."' BOSWELL. 'You must then pickle your
-        cabbage with the sal atticum.' JOHNSON. 'You know there is already
-        The Hop-Garden, a Poem: and, I think, one could say a great deal
-        about cabbage. The poem might begin with the advantages of civilized
-        society over a rude state, exemplified by the Scotch, who had no
-        cabbages till Oliver Cromwell's soldiers introduced them; and one
-        might thus shew how arts are propagated by conquest, as they were by
-        the Roman arms.' He seemed to be much diverted with the fertility of
-        his own fancy.
+        The keen-eyed among you may have noticed something strange about the photo gallery. <br>
+        Just kidding.  There is nothing strange, it's just a hover effect!  The photos in the gallery above 
+        have CSS that makes them scale up when you hover over them!  Let me show you howthat works.
       </p>
 
-      <p>
-        I told him, that I heard Dr. Percy was writing the history of the
-        wolf in Great-Britain. JOHNSON. 'The wolf, Sir! why the wolf? why
-        does he not write of the bear, which we had formerly? Nay, it is
-        said we had the beaver. Or why does he not write of the grey rat,
-        the Hanover rat, as it is called, because it is said to have come
-        into this country about the time that the family of Hanover came? I
-        should like to see The History of the Grey Rat, by Thomas Percy, D.
-        D., Chaplain in Ordinary to his Majesty,' (laughing immoderately).
-        BOSWELL. 'I am afraid a court chaplain could not decently write of
-        the grey rat.' JOHNSON. 'Sir, he need not give it the name of the
-        Hanover rat.' Thus could he indulge a luxuriant sportive
-        imagination, when talking of a friend whom he loved and esteemed.
-      </p>
+      <img src="./img/blogimages/blogimage-1.png" alt="A screenshot of HTML code used in this website">
 
       <p>
-        On Friday, March 22, having set out early from Henley, where we had
-        lain the preceding night, we arrived at Birmingham about nine
-        o'clock, and, after breakfast, went to call on his old schoolfellow
-        Mr. Hector. A very stupid maid, who opened the door, told us, that
-        'her master was gone out; he was gone to the country; she could not
-        tell when he would return.' In short, she gave us a miserable
-        reception; and Johnson observed, 'She would have behaved no better
-        to people who wanted him in the way of his profession.' He said to
-        her, 'My name is Johnson; tell him I called. Will you remember the
-        name?' She answered with rustick simplicity, in the Warwickshire
-        pronunciation, 'I don't understand you, Sir.'--'Blockhead, (said
-        he,) I'll write.' I never heard the word blockhead applied to a
-        woman before, though I do not see why it should not, when there is
-        evident occasion for it. He, however, made another attempt to make
-        her understand him, and roared loud in her ear, 'Johnson,' and then
-        she catched the sound.
+        First, let's take a look how the HTML is layed out.  The first element we have is the section container.
+        This defines the entire area that the gallery can be placed inside.  Next is a div with the 'gallerybackground' class.
+        This div is used to achieve the blur effect that you see in every section of this webpage.
+        Next is the h2, which is the title of this section, 'Photo Gallery'.
+        Now we get to the good stuff.  There is a section with class of 'galleryimages'.  This class contains all images in the gallery, the purpose of this you will see later.
+        Then there is a div with the 'image' class.  This class is used on the container for every image, that way we only have to write the style information once!
+        Finally there is an img tag and a div tag. The div is used to store the photo caption and has the class 'desc' (because I forgot what a caption was called when I wrote this code).
+      </p>
+
+      <img src="./img/blogimages/blogimage-2.png" alt="A screenshot of CSS code used in this website">
+      <img src="./img/blogimages/blogimage-3.png" alt="A screenshot of CSS code used in this website">
+
+      <p>
+        Now let's look at the CSS.
+        We start with some basic gallery styling that defines a background image, position, size, etc. We set a size and alignment for the h2, 
+        and then we reset the margins for the h2 because by default, it has an ugly margin on it that can mess up your calculations if you don't remove it.
+        Then for the gallery images container we assign a margin and display the images as flexboxes, justifying with space around.
+        The space around allows the webpage to be scaled, and the images to keep an even amount of space between them!
+        Then for the gallery background, we add some padding, a transparent background color using hsl, a box shadow, and a backdrop blur!
+      </p>
+
+      <img src="./img/blogimages/blogimage-4.png" alt="A screenshot of CSS code used in this website">
+
+      <p>
+        Now onto the good stuff. For the image class, we assign a margin and set a width. We display the image container as flexbox because if you remember, 
+        we have the images AND the image caption inside of this container. This is so when we set the flex direction to column, it's really easy to align the caption center and allows for an easier animation!
+        Then there is a transition property which sets the transition between the states of the width. The width on the hover state is set to 440px, so when you hover over an image, it transitions to the hovered state! How cool!
+        And finally, there is a width and height property for the img elements, and the image caption gets a 1em margin. <br> I hope you learned something from this post!
       </p>
     </div>
   </section>
